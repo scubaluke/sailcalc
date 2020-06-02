@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sail Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to Sail Calculator</h1>
+    <h2>The worlds best way to calculate ETA’s, average speed, distance and more!</h2>
+    <section>
+               <h3> Making an upwind passage?</h3> <span id="dots" >...</span> <br>
+               <div id="seeMore" ><p> Use this calculator to find your overall distance based on your angle off the wind. <br>
+                Input details of your passage here to help with voyage planing.<br>
+                
+                Milage upwind <input type="number" id="distance" placeholder="Distance" maxlength="5"><br>
+               Degrees off the wind (CMG, including drift) <input type="number" id="angle" onblur="validateAngle()" size="3" placeholder="Degrees"><span id="msg1"></span><br>
+               <h4 id="print1"></h4>
+               <button id="calcupwind">Calculate</button>
+               </p></div>
+               <button onclick="expand()" id="readMoreBtn">See More</button>
+            
+             
+                        
+                  
+                    
+                
+    </section>
+    <section>
+        <h3>Calculate your ETA</h3><span id="dots2">...</span><br>
+          <div id="seeMore2"> <p>To calculate the time your trip will take enter your: <br> 
+            estimated average speed <input type="number" id="speed" ><br>
+            estimated distance <input type="number" id="dist2"><br>
+            <h4 id="print2"></h4>
+
+            <button id="calc2" >calculate</button>
+        </span>
+          </p><br></div>
+          <button id="readMoreBtn2" onclick="expand2()" >Read more</button>
+
+    </section>
+
+
+
+    <footer>This site has been designed for sailors by sailors. For more information click here <a href="SOMETHING HERE" >FSBS</a></footer>
+
+    <script src="sailcalc.js"></script>
+</body>
+</html>
