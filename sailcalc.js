@@ -91,7 +91,11 @@ const findETA = () => {
     let dist = document.getElementById('dist2').value;
    let speed = document.querySelector("#speed").value;
     //retuns time in hours
-    return document.getElementById('print2').innerHTML = dist / speed;
+    let total = dist / speed;
+    let min = 60 * (total  - Math.floor(total));
+   // let hours = Math.floor(total);
+   // let minuets = total.split('.') * 60;
+    return document.getElementById('print2').innerHTML = `Estimated time = ${Math.floor(dist / speed)} hours ${min.toFixed(0)} minuets of sail time for this trip.` ;
 }
 let calc2 = document.getElementById('calc2');
 calc2.onclick = findETA;
