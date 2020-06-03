@@ -12,35 +12,50 @@
   </header>
     
     <section>
+
                <h3> Making an upwind passage?</h3> <span id="dots" >...</span> <br>
+
                <div id="seeMore" ><p> Use this calculator to find your overall distance based on your angle off the wind. <br>
-                Input details of your passage here to help with voyage planing.<br>
-                
                 Milage upwind <input type="number" id="distance" placeholder="Distance" maxlength="5"><br>
                Degrees off the wind (CMG, including drift) <input type="number" id="angle" onblur="validateAngle()" size="3" placeholder="Degrees"><span id="msg1"></span><br>
                <h4 id="print1"></h4>
                <button id="calcupwind">Calculate</button>
                </p></div>
                <button onclick="expand()" id="readMoreBtn">Read more</button>
-            
-             
-                        
-                  
-                    
-                
+    
     </section>
     <section>
+
         <h3>Calculate your ETA</h3><span id="dots2">...</span><br>
           <div id="seeMore2"> <p>To calculate the time your trip will take enter your: <br> 
-            estimated average speed <input type="number" id="speed" ><br>
-            estimated distance <input type="number" id="dist2"><br>
+            estimated average speed <input type="number" id="speed" placeholder="Speed" ><br>
+            estimated distance <input type="number" id="dist2" placeholder="Distance"><br> 
             <h4 id="print2"></h4>
 
-            <button id="calc2" >calculate</button>
-        </span>
-          </p><br></div>
+            <button id="calc2" >Calculate</button> 
+          </p></div>
           <button id="readMoreBtn2" onclick="expand2()" >Read more</button>
 
+    </section>
+    <section>
+
+        <h3>Calculate your average speed</h3><span id="dots3">...</span><br>
+        <div id="seeMore3" ><p>
+          Calculate your averge speed over passage. <br>
+          Distance <input type="number" id="dist3" placeholder="Distance"><select id="mesurement"><option value="NM">NM</option><option value="Kilometer">kilometer</option><option value="Mile">Mile</option></select> <br>
+          Time <input type="number" id="hours" placeholder="Hours"> <input type="number" id="minuets" placeholder="Minuets">
+          <h4 id="print3" > </h4>
+          <button onclick="findSpeed()" id="calc3">Calculate</button>
+          </p></div>
+          <button id="readMoreBtn3" onclick="expand3()">Read more</button>
+
+
+
+        </p>
+
+
+
+        </div>
     </section>
 
 

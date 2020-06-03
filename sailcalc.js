@@ -33,12 +33,21 @@ const expand2 = () => {
 
     }
 }
-document.querySelectorAll(".showmore").forEach(function (p) {
-    p.querySelector("a").addEventListener("click", function () {
-      p.classList.toggle("show");
-      this.textContent = p.classList.contains("show") ? "Show Less" : "Show More";
-    });
-  });
+const expand3 = () => {
+    let dots3 = document.querySelector('#dots3');
+    let seeMore3 = document.querySelector('#seeMore3');
+    let btnText3 = document.querySelector('#readMoreBtn3');
+
+    if (dots3.style.display === 'none'){
+        dots3.style.display = 'inline';
+        btnText3.innerHTML = 'Read more';
+        seeMore3.style.display = 'none';
+    } else {
+        dots3.style.display = 'none';
+        btnText3.innerHTML = 'Read less';
+        seeMore3.style.display = 'inline';
+    }
+}
 
 // validation functions
 //let angle = document.getElementById('angle').value 
@@ -95,10 +104,32 @@ const findETA = () => {
     let min = 60 * (total  - Math.floor(total));
    // let hours = Math.floor(total);
    // let minuets = total.split('.') * 60;
-    return document.getElementById('print2').innerHTML = `Estimated time = ${Math.floor(dist / speed)} hours ${min.toFixed(0)} minuets of sail time for this trip.` ;
+    return document.getElementById('print2').innerHTML = `Estimated time = ${Math.floor(dist / speed)} hours ${min.toFixed(0)} minuets of sail time for this passage.` ;
 }
 let calc2 = document.getElementById('calc2');
 calc2.onclick = findETA;
+
+const findSpeed = ()=>{
+    let dist3 = parseInt(document.querySelector('#dist3').value);
+    let min3 = parseInt(document.querySelector('#minuets').value);
+    let hours = parseInt(document.querySelector('#hours').value);
+    let measurement = document.querySelector('#measurement').value
+    let dechours = (min3 / 60);
+    let totalhours = hours + dechours;
+    aveSpeed = dist3 / totalhours;
+
+    console.log(min3)
+    console.log(dist3)
+    console.log(hours)
+    console.log(aveSpeed)
+    console.log(totalhours)
+    console.log(dechours)
+
+
+    return document.querySelector('#print3').innerHTML = `Your average speed is ${aveSpeed.toFixed(2)}${'measurement'}`;
+    //eneter time in hours
+    //return ((60 * dist) / time) / 60;
+}
 
 
 
@@ -119,13 +150,6 @@ const calcdisthours = (speed, time) => {
 }
 const findmin = time => {
    return time * 60
-}
-
-
-
-const findSpeed = (dist, time) =>{
-    //eneter time in hours
-    return ((60 * dist) / time) / 60;
 }
 
 
