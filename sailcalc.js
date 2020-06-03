@@ -113,24 +113,32 @@ const findSpeed = ()=>{
     let dist3 = parseInt(document.querySelector('#dist3').value);
     let min3 = parseInt(document.querySelector('#minuets').value);
     let hours = parseInt(document.querySelector('#hours').value);
-    let measurement = document.querySelector('#measurement').value
+    let days = parseInt(document.querySelector('#days').value);
+    let measurement = document.querySelector('#measurement').value;
+    let dayhours = days * 24;
     let dechours = (min3 / 60);
-    let totalhours = hours + dechours;
+    let totalhours = dayhours + hours + dechours;
     aveSpeed = dist3 / totalhours;
 
-    console.log(min3)
-    console.log(dist3)
-    console.log(hours)
-    console.log(aveSpeed)
-    console.log(totalhours)
-    console.log(dechours)
 
-
-    return document.querySelector('#print3').innerHTML = `Your average speed is ${aveSpeed.toFixed(2)}${'measurement'}`;
+    return document.querySelector('#print3').innerHTML = `Your average speed is ${aveSpeed.toFixed(2)} ${measurement}/Hour`;
     //eneter time in hours
     //return ((60 * dist) / time) / 60;
 }
 
+// Clear forms
+const clearform3 = () => {
+   
+     document.getElementById("form3").reset();
+    
+}
+// Dark Mode**********
+const toggleDarkLight = () => {
+    let body = document.getElementById('body');
+    let currnetClass = body.className;
+    body.className = currnetClass == "darkMode" ? "lightMode" : "darkMode";
+
+}
 
 
 /*

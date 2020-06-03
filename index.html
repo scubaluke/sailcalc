@@ -6,11 +6,16 @@
     <title>Sail Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body" class="lightMode">
   <header><h1>Welcome to Sail Calculator</h1>
     <h2>The worlds best way to calculate ETA’s, average speed, distance and more!</h2> 
   </header>
-    
+  <div class="lightdark">
+    <label class="switch" for="checkbox">
+      <input type="checkbox" id="checkbox" onclick="toggleDarkLight()"/>
+      <div class="slider round"></div>
+    </label>
+  </div>
     <section>
 
                <h3> Making an upwind passage?</h3> <span id="dots" >...</span> <br>
@@ -37,15 +42,15 @@
           <button id="readMoreBtn2" onclick="expand2()" >Read more</button>
 
     </section>
-    <section>
+    <section >
 
         <h3>Calculate your average speed</h3><span id="dots3">...</span><br>
         <div id="seeMore3" ><p>
           Calculate your averge speed over passage. <br>
-          Distance <input type="number" id="dist3" placeholder="Distance"><select id="mesurement"><option value="NM">NM</option><option value="Kilometer">kilometer</option><option value="Mile">Mile</option></select> <br>
-          Time <input type="number" id="hours" placeholder="Hours"> <input type="number" id="minuets" placeholder="Minuets">
+         <form id="form3">Distance <input type="number" id="dist3" placeholder="Distance"><select id="measurement"><option value="NM">NM</option><option value="Kilometer">kilometer</option><option value="Mile">Mile</option></select> <br>
+          Time <input type="number" id="days" placeholder="Days"> <input type="number" id="hours" placeholder="Hours"> <input type="number" id="minuets" placeholder="Minuets"></form>
           <h4 id="print3" > </h4>
-          <button onclick="findSpeed()" id="calc3">Calculate</button>
+          <button onclick="findSpeed()" id="calc3">Calculate</button><button onclick="clearform3()" >Clear</button>
           </p></div>
           <button id="readMoreBtn3" onclick="expand3()">Read more</button>
 
